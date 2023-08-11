@@ -11,7 +11,7 @@ Education project
 ```
 docker compose up -d
 ```
-and run _ex_3_etl_ DAG in web interface or test it in terminal
+and run _ex_3_etl_ DAG in web interface (_@once_) or test it in terminal
 ```
 airflow dags test ex_3_etl
 ```
