@@ -22,7 +22,7 @@ echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 
 web server running on non-standard external port http://localhost:8882, postgres: localhost:5444
 
-Dataset is stored in the default database (id=postgres_default), you may spetify connection in .env file 
+Dataset is stored in the default database (_id=postgres_default_), you may specify connection in .env file 
 ```
 AIRFLOW_CONN_POSTGRES_DEFAULT
 ```
