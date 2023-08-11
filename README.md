@@ -15,6 +15,11 @@ and run _ex_3_etl_ DAG in web interface or test it in terminal
 ```
 airflow dags test ex_3_etl
 ```
+make sure the _logs_, _data_, _dags_ folders are writable for Airflow. Or set AIRFLOW_UID to current user
+```
+echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+```
+
 web server running on non-standard external port http://localhost:8882, postgres: localhost:5444
 
 Dataset is stored in the default database (id=postgres_default), you may spetify connection in .env file 
