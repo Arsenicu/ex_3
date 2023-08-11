@@ -3,7 +3,7 @@ The script does the following:
 1. Download EGRUL zip file
 2. Selects companies by a specific OKVED code and store it in _telecom_companies_ table
 3. Parse hh.ru site - store vacanties by filter in _vacancies_ table
-4. Select jobs with companies with a specific OKVED code
+4. Select jobs with companies with a specific OKVED code and store data in _ex3_result_ table
 
 Education project
 
