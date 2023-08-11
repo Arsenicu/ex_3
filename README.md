@@ -15,7 +15,7 @@ and run _ex_3_etl_ DAG in web interface or test it in terminal
 ```
 airflow dags test ex_3_etl
 ```
-make sure the _logs_, _data_, _dags_ folders are writable for Airflow. Or set AIRFLOW_UID to current user
+make sure what the _logs_, _data_, _dags_ folders are writable for Airflow. Or set AIRFLOW_UID to current user
 ```
 echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
 ```
