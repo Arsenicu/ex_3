@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+    postgres:
+        image: postgres
+        environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+        ports:
+            - "5444:5432"
+    webserver:
+        image: apache/airflow:2.6.3-python3.10
+        command: webserver
+        restart_policy:
+            condition: on-failure
+        depends_on:
+            - postgres
+            - scheduler
+        env_file:
+            - .env
+        volumes:
+            - ./dags:/opt/airflow/dags
+            - ./logs:/opt/airflow/logs:rw
+            - ./data:/opt/airflow/data:rw
+        ports:
+            - "8882:8080"
+            
+    scheduler:
+        image: apache/airflow:2.6.3-python3.10
+        command: scheduler
+        restart_policy:
+            condition: on-failure
+        depends_on:
+            - postgres
+        env_file:
+            - .env
+        restart: always
+        volumes:
+            - ./dags:/opt/airflow/dags
+            - ./logs:/opt/airflow/logs:rw
+            - ./data:/opt/airflow/data:rw
